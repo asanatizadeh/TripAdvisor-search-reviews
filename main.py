@@ -124,12 +124,3 @@ if __name__ == '__main__':
     driver.close()
 
 
-df = pd.read_csv('threats.csv', delimiter= '|')
-df1 = pd.read_csv('bribes.csv', delimiter= '|')
-
-data = pd.concat((df, df1), axis= 0)
-data.sort_values('url', inplace=True)
-
-data2 = data.drop_duplicates()
-
-data2.to_csv('Reviews_threat_bribe_TA.csv')
